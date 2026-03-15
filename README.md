@@ -3,14 +3,22 @@
 A simple weather application built with JavaScript, HTML, and CSS.
 
 ## Features
-- Search weather by city
-- Display temperature, humidity, wind speed, and weather condition
-- Weather icon
-- Loading state
-- Error handling
-- Search on Enter key
-- Current date and time
-- Dynamic background based on weather
+
+- Search weather by city name
+- Search with **Enter key**
+- **Current location weather** using the Geolocation API
+- **Recent searched cities** saved in **localStorage**
+- **Remove individual cities** from recent searches
+- **Clear all recent cities**
+- **Feels like temperature**
+- **Dynamic backgrounds** based on weather conditions
+- **Day / night background logic** based on the selected city's local time
+- **Local time for the selected city**
+- **Loading state** while fetching weather data
+- **Error handling** for empty input, invalid cities, and location denial
+- **Glassmorphism UI design**
+- **Responsive layout**
+- **Custom favicon**
 
 ## Technologies Used
 - HTML
