@@ -4,13 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Weather App</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./css/main.css">
   <link rel="icon" href="favicon.svg" />
 </head>
+
 <body>
+   <div id="weather-bg" class="weather-bg"></div>
   <div class="container">
     <h1>Weather App</h1>
-
+     <label class="theme-switch">
+     <input type="checkbox" id="theme-toggle">
+     <span class="slider"></span>
+</label>
     <div class="search-box">
       <input
         type="text"
@@ -45,5 +50,6 @@
   </div>
 
   <script type= "module" src="./src/app.js"></script>
+  <script src="./src/theme.js"></script>
 </body>
 </html>

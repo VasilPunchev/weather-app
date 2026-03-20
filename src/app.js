@@ -20,14 +20,12 @@ import {
 import { elements } from "./views/domElements.js";
 import { renderRecentCities } from "./views/recentCitiesView.js";
 import { updateBackground } from "./background.js";
+import "./theme.js";
+
 
 elements.searchBtn.addEventListener("click", getWeather);
 elements.locationBtn.addEventListener("click", getWeatherByLocation);
-
-elements.clearCitiesBtn.addEventListener("click", () => {
-  clearRecentCities();
-  updateRecentCitiesUI();
-});
+elements.clearCitiesBtn.addEventListener("click", handleClearAll);
 
 elements.cityInput.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
@@ -35,8 +33,11 @@ elements.cityInput.addEventListener("keydown", function (event) {
   }
 });
 
+
 updateDateTime(elements.dateTimeElement);
 setInterval(() => updateDateTime(elements.dateTimeElement), 1000);
+
+
 
 async function getWeather() {
   const city = elements.cityInput.value.trim();
@@ -82,6 +83,12 @@ async function getWeather() {
       },
       updateBackground
     );
+    elements.weatherCard.classList.remove("hidden");
+    elements.weatherCard.classList.add("fade-in");
+
+     setTimeout(() => {
+      elements.weatherCard.classList.remove("fade-in");
+     }, 350);
 
     setTimezone(data.timezone);
     updateDateTime(elements.dateTimeElement);
@@ -118,6 +125,37 @@ function updateRecentCitiesUI() {
   });
 }
 
+
+
+function handleClearAll() {
+  clearRecentCities();
+
+  elements.recentCitiesElement.innerHTML = "";
+  elements.clearCitiesBtn.classList.add("hidden");
+
+  elements.cityInput.value = "";
+  elements.errorMessage.classList.add("hidden");
+  elements.loading.classList.add("hidden");
+  elements.weatherCard.classList.add("fade-out");
+
+  setTimeout(() => {
+    elements.weatherCard.classList.add("hidden");
+    elements.weatherCard.classList.remove("fade-out");
+  }, 300);
+
+  const weatherBg = document.getElementById("weather-bg");
+
+  if (weatherBg) {
+    weatherBg.classList.remove(
+      "sunny",
+      "cloudy",
+      "rainy",
+      "snowy",
+      "night",
+      "cloudy-night"
+    );
+  }
+}
 function getWeatherByLocation() {
   if (!navigator.geolocation) {
     showError(

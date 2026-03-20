@@ -1,0 +1,23 @@
+.weather-bg.sunny {
+  background: linear-gradient(135deg, rgba(246, 211, 101, 0.35), rgba(253, 160, 133, 0.25));
+}
+
+.weather-bg.cloudy {
+  background: linear-gradient(135deg, rgba(189, 195, 199, 0.22), rgba(44, 62, 80, 0.18));
+}
+
+.weather-bg.rainy {
+  background: linear-gradient(135deg, rgba(78, 84, 200, 0.28), rgba(143, 148, 251, 0.2));
+}
+
+.weather-bg.snowy {
+  background: linear-gradient(135deg, rgba(230, 218, 218, 0.22), rgba(39, 64, 70, 0.16));
+}
+
+.weather-bg.night {
+  background: linear-gradient(135deg, rgba(15, 32, 39, 0.3), rgba(32, 58, 67, 0.24), rgba(44, 83, 100, 0.2));
+}
+
+.weather-bg.cloudy-night {
+  background: linear-gradient(135deg, rgba(35, 37, 38, 0.28), rgba(65, 67, 69, 0.2));
+}

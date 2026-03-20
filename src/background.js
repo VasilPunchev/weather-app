@@ -1,13 +1,28 @@
 export function updateBackground(weatherMain, isDay) {
+  const weatherBg = document.getElementById("weather-bg");
+
+  weatherBg.classList.remove(
+    "sunny",
+    "cloudy",
+    "rainy",
+    "snowy",
+    "night",
+    "cloudy-night"
+  );
+
+  let weatherClass = "";
+
   if (weatherMain === "Clear") {
-    document.body.className = isDay ? "sunny" : "night";
+    weatherClass = isDay ? "sunny" : "night";
   } else if (weatherMain === "Clouds") {
-    document.body.className = isDay ? "cloudy" : "cloudy-night";
+    weatherClass = isDay ? "cloudy" : "cloudy-night";
   } else if (weatherMain === "Rain") {
-    document.body.className = "rainy";
+    weatherClass = "rainy";
   } else if (weatherMain === "Snow") {
-    document.body.className = "snowy";
-  } else {
-    document.body.className = "";
+    weatherClass = "snowy";
+  }
+
+  if (weatherClass) {
+    weatherBg.classList.add(weatherClass);
   }
 }
