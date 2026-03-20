@@ -31,10 +31,6 @@ A simple weather application built with JavaScript, HTML, and CSS.
 2. Open the project folder
 3. Add your OpenWeather API key in `app.js`
 4. Open `index.html` with Live Server
-## Live Demo
-
-You can view the live application here:
-https://weather-app.raccoon.bg/
 
 ## Project Purpose
 This project was created as a portfolio project while studying JavaScript at SoftUni.
